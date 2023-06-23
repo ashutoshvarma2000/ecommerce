@@ -1,0 +1,65 @@
+{% extends 'base.html' %}
+{% block body %}
+
+<h1 class="text-center">Contact Us</h1>
+<div class="container mt-2">
+<div class="row">
+    <div class="col-md-4"></div>
+    <div class="col-md-4">
+        <h3 class="text-dark">Signup</h3>
+  <form action="/contact" method="post">
+    {% csrf_token %}
+    <br />
+    <label for="name">Full name</label>
+    <div class="form-group">
+      <input
+        type="text"
+        class="form-control p-2"
+        id="name"
+        name="name"
+        required
+      />
+    </div>
+    <label for="email">Email</label>
+    <div class="form-group">
+      <input
+        type="email"
+        class="form-control p-2"
+        id="email"
+        name="email"
+        value={{user.email}}
+        required
+      />
+    </div>
+    <label for="pass1">How can i help you?</label>
+    <div class="form-group">
+      <textarea
+        type="text"
+        class="form-control p-2"
+        id="desc"
+        name="desc"
+        required> </textarea>
+      
+    </div>
+
+    <label for="pnumber">Phone number</label>
+    <div class="form-group">
+      <input
+        type="number"
+        class="form-control p-2"
+        id="pnumber"
+        name="pnumber"
+        required
+      />
+    </div>
+    
+    <br />
+    <button type="submit" class="btn-2">Contact</button>
+    <br />
+    
+  </form>
+    </div>
+    <div class="col-md-4">
+</div>
+
+{% endblock body %}
